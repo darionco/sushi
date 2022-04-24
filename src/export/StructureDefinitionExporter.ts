@@ -55,7 +55,7 @@ import {
 } from '../fhirtypes/common';
 import { Package } from './Package';
 import { isUri } from 'valid-url';
-import chalk from 'chalk';
+// import chalk from 'chalk';
 
 // Extensions that should not be inherited by derived profiles
 // See: https://jira.hl7.org/browse/FHIR-27535
@@ -93,7 +93,7 @@ export class StructureDefinitionExporter implements Fishable {
     );
     if (nonConformantResources.length) {
       // logger.warn color
-      const clr = chalk.rgb(179, 98, 0);
+      const clr = (arg: string) => arg; // chalk.rgb(179, 98, 0);
       const maxLength = 61;
       const nonConformantResourceLogs = nonConformantResources.map(r => {
         const printableName =
