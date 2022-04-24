@@ -3,7 +3,7 @@ import { PackageLoadError, CurrentPackageLoadError } from '../errors';
 import fs from 'fs-extra';
 import path from 'path';
 import os from 'os';
-import tar from 'tar';
+// import tar from 'tar';
 import junk from 'junk';
 import temp from 'temp';
 import { logger, getFilesRecursive } from '../utils';
@@ -128,12 +128,12 @@ export async function loadDependency(
         fs.writeFileSync(tempFile.path, res.data);
         // Extract the package to a temporary directory
         const tempDirectory = temp.mkdirSync();
-        tar.x({
-          cwd: tempDirectory,
-          file: tempFile.path,
-          sync: true,
-          strict: true
-        });
+        // tar.x({
+        //   cwd: tempDirectory,
+        //   file: tempFile.path,
+        //   sync: true,
+        //   strict: true
+        // });
         cleanCachedPackage(tempDirectory);
         // Add or replace the package in the FHIR cache
         const targetDirectory = path.join(cachePath, fullPackageName);
