@@ -9,7 +9,9 @@ import {
   uniqWith,
   upperFirst
 } from 'lodash';
-import { minify } from 'html-minifier';
+// import { minify } from 'html-minifier';
+const minify = (text: string, ...args: any[]) => text;
+
 import { isUri } from 'valid-url';
 import { StructureDefinition } from './StructureDefinition';
 import { CodeableConcept, Coding, Quantity, Ratio, Reference } from './dataTypes';
