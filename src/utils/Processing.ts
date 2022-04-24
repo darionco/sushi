@@ -1,6 +1,7 @@
 import path from 'path';
 import fs from 'fs-extra';
-import readlineSync from 'readline-sync';
+// import readlineSync from 'readline-sync';
+const readlineSync = {} as any;
 import YAML from 'yaml';
 import { isPlainObject, padEnd, sortBy, upperFirst } from 'lodash';
 import { EOL } from 'os';
